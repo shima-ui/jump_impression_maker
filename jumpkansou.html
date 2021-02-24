@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <meta charset="utf-8">
+    <title>ジャンプ感想メーカー</title>
+
+    <link rel="stylesheet" href="stylesheet.css">
+    <script type="text/javascript" src="javascript.js"></script>
+
+  </head>
+
+  <body>
+    <div class="header">
+      <h1>ジャンプ感想メーカー</h1>
+    </div>
+
+    <div class="work_name">
+      <h3>作品名</h3>
+      <input type="radio" name="work" onclick="tag('#今週のワンピ')">#今週のワンピ</button>
+      <input type="radio" name="work" onclick="tag('ヒロアカ')">ヒロアカ</button>
+      <input type="radio" name="work" onclick="tag('呪術本誌')">呪術本誌</button>
+      <input type="radio" name="work" onclick="tag('Dr.STONE')">Dr.STONE</button>
+      <input type="radio" name="work" onclick="tag('ブラクロ')">ブラクロ</button>
+    </br>
+      <input type="radio" name="work" onclick="tag('マッシュル')">マッシュル</button>
+      <input type="radio" name="work" onclick="tag('ロボコ')">ロボコ</button>
+      <input type="radio" name="work" onclick="tag('夜桜')">夜桜</button>
+      <input type="radio" name="work" onclick="tag('#アンデラ')">#アンデラ</button>
+      <input type="radio" name="work" onclick="tag('マグちゃん')">マグちゃん</button>
+      <input type="radio" name="work" onclick="tag('あやかし')">あやかし</button>
+  </br>
+      <input type="radio" name="work" onclick="tag('高校生家族')">高校生家族</button>
+      <input type="radio" name="work" onclick="tag('仄見える')">仄見える</button>
+      <input type="radio" name="work" onclick="tag('ニライカナイ')">ニライカナイ</button>
+      <input type="radio" name="work" onclick="tag('SAKAMOTO')">SAKAMOTO</button>
+    </br>
+      <input type="radio" name="work" onclick="tag('逃げ若')">逃げ若</button>
+      <input type="radio" name="work" onclick="tag('アイテルシー')">アイテルシー</button>
+      <input type="radio" name="work" onclick="tag('ウィッチウォッチ')">ウィッチウォッチ</button>
+      <input type="radio" name="work" onclick="tag('クーロン')">クーロン</button>
+    </div>
+
+    <div>
+
+      <input type="text" id="work_name_display">
+      #wj<input type="text" id="no">
+
+      <textarea id="tweetdraft"></textarea>
+      <input type="text" id="tweet_length" class="tweet_length" placeholder=140>
+    </div>
+
+    <div>
+      <button type="button" onclick="copy()">コピー</button>
+      <button type="button" onclick="form_clear()">クリア</button>
+    </div>
+
+    <textarea id="tweet_product_box"></textarea>
+    
+  </body>
+
+</html>
