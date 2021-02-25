@@ -1,6 +1,9 @@
 /*作品名*/
 var work_name ="";
 
+// ツイート文字数
+var tweet_length;
+
 /*ツイート内容*/
 var tweet_product;
 
@@ -23,7 +26,9 @@ function realtime(){
     tweet_product = `${work_name}　#wj${document.getElementById('no').value}\n${document.getElementById('tweetdraft').value}`;
 
     // 文字数の計測と表示
-    document.getElementById("tweet_length").value =  140 - tweet_product.length;
+    tweetlength = 140 - tweet_product.length;
+    document.getElementById("tweet_length").value =  tweetlength;
+
 
     // 文字数に応じたスタイル
     var p = document.getElementById('tweet_length');
