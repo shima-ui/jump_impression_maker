@@ -1,64 +1,84 @@
 <!DOCTYPE html>
 
 <html>
-
   <head>
-
+    <!-- 言語設定 -->
     <meta charset="utf-8">
+
+    <!-- タイトル -->
     <title>ジャンプ感想メーカー</title>
 
+    <!-- 外部ファイル読み込み -->
     <link rel="stylesheet" href="stylesheet.css">
-    <script type="text/javascript" src="javascript.js"></script>
-
+    <script type="text/javascript" src="script.js"></script>
   </head>
 
   <body>
-    <div class="header">
-      <h1>ジャンプ感想メーカー</h1>
+    <!-- ヘッダー -->
+    <div class="header">ジャンプ感想メーカー</div>
+
+    <!-- 作品選択欄 -->
+    <div class="work_name_table">
+      <!-- 作品選択欄の見出し -->
+      <div class="work_name_title">作品選択</div>
+
+      <!-- ラジオボタン -->
+      <input type="radio" name="work" onclick="tag('#今週のワンピ')" class="radio-input" id="radio-1"><label for="radio-1">#今週のワンピ</label>
+      <input type="radio" name="work" onclick="tag('ヒロアカ')" class="radio-input" id="radio-2"><label for="radio-2">ヒロアカ</label>
+      <input type="radio" name="work" onclick="tag('呪術本誌')" class="radio-input" id="radio-3"><label for="radio-3">呪術本誌</label>
+      <input type="radio" name="work" onclick="tag('Dr.STONE')" class="radio-input" id="radio-4"><label for="radio-4">Dr.STONE</label>
+      <input type="radio" name="work" onclick="tag('ブラクロ')" class="radio-input" id="radio-5"><label for="radio-5">ブラクロ</label>
+      <input type="radio" name="work" onclick="tag('マッシュル')" class="radio-input" id="radio-6"><label for="radio-6">マッシュル</label>
+      <input type="radio" name="work" onclick="tag('ロボコ')" class="radio-input" id="radio-7"><label for="radio-7">ロボコ</label>
+      <input type="radio" name="work" onclick="tag('夜桜')" class="radio-input" id="radio-8"><label for="radio-8">夜桜</label>
+      <input type="radio" name="work" onclick="tag('#アンデラ')" class="radio-input" id="radio-9"><label for="radio-9">#アンデラ</label>
+      <input type="radio" name="work" onclick="tag('マグちゃん')" class="radio-input" id="radio-10"><label for="radio-10">マグちゃん</label>
+      <input type="radio" name="work" onclick="tag('あやかし')" class="radio-input" id="radio-11"><label for="radio-11">あやかし</label>
+      <input type="radio" name="work" onclick="tag('高校生家族')" class="radio-input" id="radio-12"><label for="radio-12">高校生家族</label>
+      <input type="radio" name="work" onclick="tag('仄見える')" class="radio-input" id="radio-13"><label for="radio-13">仄見える</label>
+      <input type="radio" name="work" onclick="tag('ニライカナイ')" class="radio-input" id="radio-14"><label for="radio-14">ニライカナイ</label>
+      <input type="radio" name="work" onclick="tag('SAKAMOTO')" class="radio-input" id="radio-15"><label for="radio-15">SAKAMOTO</label>
+      <input type="radio" name="work" onclick="tag('逃げ若')" class="radio-input" id="radio-16"><label for="radio-16">逃げ若</label>
+      <input type="radio" name="work" onclick="tag('アイテルシー')" class="radio-input" id="radio-17"><label for="radio-17">アイテルシー</label>
+      <input type="radio" name="work" onclick="tag('ウィッチウォッチ')" class="radio-input" id="radio-18"><label for="radio-18">ウィッチウォッチ</label>
+      <input type="radio" name="work" onclick="tag('クーロン')" class="radio-input" id="radio-19"><label for="radio-19">クーロン</label>
+      
     </div>
 
-    <div class="work_name">
-      <h3>作品名</h3>
-      <input type="radio" name="work" onclick="tag('#今週のワンピ')">#今週のワンピ</button>
-      <input type="radio" name="work" onclick="tag('ヒロアカ')">ヒロアカ</button>
-      <input type="radio" name="work" onclick="tag('呪術本誌')">呪術本誌</button>
-      <input type="radio" name="work" onclick="tag('Dr.STONE')">Dr.STONE</button>
-      <input type="radio" name="work" onclick="tag('ブラクロ')">ブラクロ</button>
-    </br>
-      <input type="radio" name="work" onclick="tag('マッシュル')">マッシュル</button>
-      <input type="radio" name="work" onclick="tag('ロボコ')">ロボコ</button>
-      <input type="radio" name="work" onclick="tag('夜桜')">夜桜</button>
-      <input type="radio" name="work" onclick="tag('#アンデラ')">#アンデラ</button>
-      <input type="radio" name="work" onclick="tag('マグちゃん')">マグちゃん</button>
-      <input type="radio" name="work" onclick="tag('あやかし')">あやかし</button>
-  </br>
-      <input type="radio" name="work" onclick="tag('高校生家族')">高校生家族</button>
-      <input type="radio" name="work" onclick="tag('仄見える')">仄見える</button>
-      <input type="radio" name="work" onclick="tag('ニライカナイ')">ニライカナイ</button>
-      <input type="radio" name="work" onclick="tag('SAKAMOTO')">SAKAMOTO</button>
-    </br>
-      <input type="radio" name="work" onclick="tag('逃げ若')">逃げ若</button>
-      <input type="radio" name="work" onclick="tag('アイテルシー')">アイテルシー</button>
-      <input type="radio" name="work" onclick="tag('ウィッチウォッチ')">ウィッチウォッチ</button>
-      <input type="radio" name="work" onclick="tag('クーロン')">クーロン</button>
+    <!-- ディスプレイ -->
+    <div class="display">
+
+        <!-- 上部の細々した部品 -->
+        <div class="upper_display">
+          <!-- 作品名の表示 -->
+          <input type="text" id="work_name_display">
+
+          <!-- 号数の表示 -->
+          #wj<input type="text" id="no">
+
+           <!-- コピーボタン＆クリアボタン  -->
+          <div class="button">
+            <button type="button" onclick="copy()" class="copy">コピー</button>
+            <button type="button" onclick="form_clear()" class="clear">クリア</button>
+          </div>
+        </div>
+        
+        <!-- 感想記入欄 -->
+        <textarea id="tweetdraft"></textarea>
+
+        <!-- 残り文字数 -->
+        <input type="text" id="tweet_length" class="tweet_length">
+
     </div>
 
-    <div>
-
-      <input type="text" id="work_name_display">
-      #wj<input type="text" id="no">
-
-      <textarea id="tweetdraft"></textarea>
-      <input type="text" id="tweet_length" class="tweet_length" placeholder=140>
+    <!-- メモ -->
+    <div class="memo">
+      メモ
+      <textarea id="memo"></textarea>
     </div>
-
-    <div>
-      <button type="button" onclick="copy()">コピー</button>
-      <button type="button" onclick="form_clear()">クリア</button>
-    </div>
-
-    <textarea id="tweet_product_box"></textarea>
     
-  </body>
+    <!-- 非表示 -->
+    <textarea id="tweet_product_box"></textarea>
 
+  </body>
 </html>
