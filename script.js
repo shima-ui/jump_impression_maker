@@ -26,8 +26,8 @@ function realtime(){
     tweet_product = `${work_name}　#wj${document.getElementById('no').value}\n${document.getElementById('tweetdraft').value}`;
 
     // 文字数の計測と表示
-    tweetlength = 140 - tweet_product.length;
-    document.getElementById("tweet_length").value =  tweetlength;
+    tweet_length = 140 - tweet_product.length;
+    document.getElementById("tweet_length").value =  tweet_length;
 
 
     // 文字数に応じたスタイル
