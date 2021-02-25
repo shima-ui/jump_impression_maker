@@ -1,54 +1,158 @@
+/* 全体のフォント */
 body{
-  font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro", "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "メイリオ", sans-serif;
+  font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro", "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "メイリオ", "sans-serif";
+  background-color: #F3EFE7;
 }
 
+
+/* ヘッダー */
 .header{
-  background-color:#db360d;
-}
-
-h1{
-  font-family:"Impact";
+  position: absolute;
+  left:0px;
+  top:0px;
+  width:100%;
+  background-color:#E73A38;
   color:white;
-  margin:10px;
+  font-family:"Impact", "arial black","sans-serif";
+  font-size:30px;
+  padding:5px 10px;
 }
 
-h3{
-  font-family:'YuGothic';
-  text-decoration: underline;
+
+/* 作品選択欄 */
+.work_name_table{
+  padding: 5px 0px 10px 10px;
+  border: solid 2px #1b1b1b;
+  font-size:16px;
+  margin-top:70px;
+  background-color:white;
 }
 
-.number{
-  padding: 0.5em 0.5em;
-  border: solid 3px #1b1b1b;
+/* 作品選択欄のタイトル */
+.work_name_title{
+  font-size:20px;
+  font-weight: bold;
 }
 
-.work_name{
-  padding: 0.5em 0.5em;
-  border: solid 3px #1b1b1b;
+/*ラジオボタン*/
+/* デフォルトの丸の消去 */
+.radio-input{
+  display: none;
 }
 
-button{
-  background-color:#f7f7f7;
+/* ラベルの整列 */
+label{
+  display: inline-block;
+  width: 130px;
+}
+
+/*ラベルの位置*/
+.radio-input + label{
+  padding-left: 20px;
+  position:relative;
+}
+
+/*外側の丸*/
+.radio-input + label::before{
+  content: "";
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  border: 1px solid #999;
+  border-radius: 50%;
+}
+
+/*選択された時の文字の色*/
+.radio-input:checked + label{
+  color: #E73A38;
+}
+
+/*内側の丸*/
+.radio-input:checked + label::after{
+  content: "";
+  display: block;
+  position: absolute;
+  top: 6px;
+  left: 3px;
+  width: 11px;
+  height: 11px;
+  background: #E73A38;
+  border-radius: 50%;
+}
+
+
+/* テキストボックス */
+input{
+  font-size: 18px;
+  border: 2px solid rgb(150, 150, 150);
+}
+
+/*作品名表示欄*/
+#work_name_display{
+  width: 180px;
+}
+/*号数表示欄*/
+#no{
+  width: 100px;
+}
+
+
+/* 表示欄 */
+.display{
+  margin-top: 15px;
+}
+
+#tweetdraft{
+  margin-top: 10px;
 }
 
 textarea{
   width: 100%;
-  height:200px;
+  height:150px;
   font-size:18px;
-  font-family:"San Francisco";
+  border: 2px solid rgb(150, 150, 150);
+  font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro", "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "メイリオ", "sans-serif";
 }
 
-.tweet_length_over{
-  width:30px;
-  background-color:brown;
+
+
+/*ボタン*/
+button{
+  font-size: 16px;
+  font-weight:bold;
+  border: 2px solid rgb(150, 150, 150);
+  background-color: white;
 }
 
+button:active{
+  font-size: 16px;
+  color:white;
+  background-color: rgb(150, 150, 150);
+}
+
+.button{
+  float:right;
+}
+
+
+/*文字数表記欄*/
 .tweet_length{
-  width:30px;
-  background-color:aquamarine;
+  text-align:center;
+  width:100%;
+  color:white;
 }
 
 
+/* メモ */
+.memo{
+  margin-top:20px;
+}
+
+
+/* 見えない箱 */
 #tweet_product_box{
   position:fixed;left:100vw
 }
