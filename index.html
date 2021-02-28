@@ -11,19 +11,22 @@
     <!-- 外部ファイル読み込み -->
     <link rel="stylesheet" href="stylesheet.css">
     <script type="text/javascript" src="script.js"></script>
-    
+
     <!-- レスポンシブ用デバイスの横幅取得 -->
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+
   </head>
 
   <body>
+
     <!-- ヘッダー -->
     <div class="header">ジャンプ感想メーカー</div>
 
+    <!-- 本体 -->
+    <div class="content_wrapper">
+
     <!-- 作品選択欄 -->
     <div class="work_name_table">
-      <!-- 作品選択欄の見出し -->
-      <div class="work_name_title">作品選択</div>
 
       <!-- ラジオボタン -->
       <input type="radio" name="work" onclick="tag('#今週のワンピ')" class="radio-input" id="radio-1"><label for="radio-1">#今週のワンピ</label>
@@ -59,20 +62,23 @@
           <!-- 号数の表示 -->
           #wj<input type="text" id="no">
 
-           <!-- コピーボタン＆クリアボタン  -->
-          <div class="button">
-            <button type="button" onclick="copy()" class="copy">コピー</button>
-            <button type="button" onclick="form_clear()" class="clear">クリア</button>
-          </div>
+          <!-- 残り文字数 -->
+          <input type="text" id="tweet_length" class="tweet_length">
+
         </div>
         
         <!-- 感想記入欄 -->
         <textarea id="tweetdraft"></textarea>
 
-        <!-- 残り文字数 -->
-        <input type="text" id="tweet_length" class="tweet_length">
-
+        <!-- コピーボタン＆クリアボタン  -->
+        <div class="button_area">
+          <button type="button" onclick="copy()" class="copy">コピー</button>
+          <button type="button" onclick="form_clear()" class="clear">クリア</button>
+          <button type=“button” onclick="location.href='https://twitter.com/home'">ツイッター</button>
+        </div>
     </div>
+
+    
 
     <!-- メモ -->
     <div class="memo">
@@ -80,6 +86,8 @@
       <textarea id="memo"></textarea>
     </div>
     
+    </div>
+
     <!-- 非表示 -->
     <textarea id="tweet_product_box"></textarea>
 
