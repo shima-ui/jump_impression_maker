@@ -1,158 +1,50 @@
-/* 全体のフォント */
-body{
-  font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro", "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "メイリオ", "sans-serif";
-  background-color: #F3EFE7;
+/*作品名*/
+var work_name ="";
+
+// ツイート文字数
+var tweet_length;
+
+/*ツイート内容*/
+var tweet_product;
+
+/*作品名取得＆表示*/
+function tag(tag_name){
+    work_name = tag_name;
+    document.getElementById("work_name_display").value = work_name;
+}
+
+/*ツイートコピー*/
+function copy(){
+    document.getElementById("tweet_product_box").value = tweet_product;
+    tweet_product_box.select(); 
+    document.execCommand("copy");
+}
+
+/*自動関数*/
+function realtime(){
+    // ツイート内容の生成
+    tweet_product = `${document.getElementById("work_name_display").value}　#wj${document.getElementById('no').value}\n${document.getElementById('tweetdraft').value}`;
+
+    // 文字数の計測と表示
+    tweet_length = 140 - tweet_product.length;
+    document.getElementById("tweet_length").value =  tweet_length;
+
+    // 文字数に応じたスタイル
+    var p = document.getElementById('tweet_length');
+    if(tweet_length < 0){
+        p.style.backgroundColor = "#E73A38";
+    }else if(tweet_length < 11){
+        p.style.backgroundColor = "#FFAD34";
+    }else{
+        p.style.backgroundColor = "#07A1EF";
+    }
+}
+
+/*感想欄のクリア*/
+function form_clear(){
+    document.getElementById("tweetdraft").value = "";
 }
 
 
-/* ヘッダー */
-.header{
-  position: absolute;
-  left:0px;
-  top:0px;
-  width:100%;
-  background-color:#E73A38;
-  color:white;
-  font-family:"Impact", "arial black","sans-serif";
-  font-size:30px;
-  padding:5px 10px;
-}
-
-
-/* 作品選択欄 */
-.work_name_table{
-  padding: 5px 0px 10px 10px;
-  border: solid 2px #1b1b1b;
-  font-size:16px;
-  margin-top:70px;
-  background-color:white;
-}
-
-/* 作品選択欄のタイトル */
-.work_name_title{
-  font-size:20px;
-  font-weight: bold;
-}
-
-/*ラジオボタン*/
-/* デフォルトの丸の消去 */
-.radio-input{
-  display: none;
-}
-
-/* ラベルの整列 */
-label{
-  display: inline-block;
-  width: 130px;
-}
-
-/*ラベルの位置*/
-.radio-input + label{
-  padding-left: 20px;
-  position:relative;
-}
-
-/*外側の丸*/
-.radio-input + label::before{
-  content: "";
-  display: block;
-  position: absolute;
-  top: 3px;
-  left: 0;
-  width: 15px;
-  height: 15px;
-  border: 1px solid #999;
-  border-radius: 50%;
-}
-
-/*選択された時の文字の色*/
-.radio-input:checked + label{
-  color: #E73A38;
-}
-
-/*内側の丸*/
-.radio-input:checked + label::after{
-  content: "";
-  display: block;
-  position: absolute;
-  top: 6px;
-  left: 3px;
-  width: 11px;
-  height: 11px;
-  background: #E73A38;
-  border-radius: 50%;
-}
-
-
-/* テキストボックス */
-input{
-  font-size: 18px;
-  border: 2px solid rgb(150, 150, 150);
-}
-
-/*作品名表示欄*/
-#work_name_display{
-  width: 180px;
-}
-/*号数表示欄*/
-#no{
-  width: 100px;
-}
-
-
-/* 表示欄 */
-.display{
-  margin-top: 15px;
-}
-
-#tweetdraft{
-  margin-top: 10px;
-}
-
-textarea{
-  width: 100%;
-  height:150px;
-  font-size:18px;
-  border: 2px solid rgb(150, 150, 150);
-  font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro", "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "メイリオ", "sans-serif";
-}
-
-
-
-/*ボタン*/
-button{
-  font-size: 16px;
-  font-weight:bold;
-  border: 2px solid rgb(150, 150, 150);
-  background-color: white;
-}
-
-button:active{
-  font-size: 16px;
-  color:white;
-  background-color: rgb(150, 150, 150);
-}
-
-.button{
-  float:right;
-}
-
-
-/*文字数表記欄*/
-.tweet_length{
-  text-align:center;
-  width:100%;
-  color:white;
-}
-
-
-/* メモ */
-.memo{
-  margin-top:20px;
-}
-
-
-/* 見えない箱 */
-#tweet_product_box{
-  position:fixed;left:100vw
-}
+// 自動関数の実行
+setInterval(realtime, 100);
