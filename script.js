@@ -23,12 +23,11 @@ function copy(){
 /*自動関数*/
 function realtime(){
     // ツイート内容の生成
-    tweet_product = `${work_name}　#wj${document.getElementById('no').value}\n${document.getElementById('tweetdraft').value}`;
+    tweet_product = `${document.getElementById("work_name_display").value}　#wj${document.getElementById('no').value}\n${document.getElementById('tweetdraft').value}`;
 
     // 文字数の計測と表示
     tweet_length = 140 - tweet_product.length;
     document.getElementById("tweet_length").value =  tweet_length;
-
 
     // 文字数に応じたスタイル
     var p = document.getElementById('tweet_length');
@@ -45,6 +44,7 @@ function realtime(){
 function form_clear(){
     document.getElementById("tweetdraft").value = "";
 }
+
 
 // 自動関数の実行
 setInterval(realtime, 100);
